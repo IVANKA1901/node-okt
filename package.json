@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node ./dist/app",
-    "start:dev": "nodemon ./dist/app",
+    "start:dev": "nodemon ./dist/server",
     "dev": "nodemon ./src/app.ts --watch ./src --onChange \" rimraf dist\" ",
     "build": "tsc",
     "lint": "eslint --cache --ext .js,.ts src",
@@ -18,12 +18,14 @@
     "gravatar": "^1.8.2",
     "joi": "^17.9.2",
     "jsonwebtoken": "^9.0.1",
+    "mongoose": "^7.4.3",
     "nodemailer": "^6.9.4",
     "nodemon": "^3.0.1",
     "pm2": "^5.3.0",
     "typescript": "^5.1.6"
   },
   "devDependencies": {
-    "@types/node": "^20.4.8"
+    "@types/node": "^20.4.8",
+    "@types/dotenv": "^8.2.0"
   }
 }
