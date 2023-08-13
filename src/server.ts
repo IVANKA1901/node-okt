@@ -1,17 +1,16 @@
 import mongoose from "mongoose";
 
 import app from "./app";
-
-const { DB_HOST, PORT } = require("./configs/env.configs");
+import { envConfig } from "./configs/env.configs";
 
 mongoose.set("strictQuery", true);
 
 mongoose
-  .connect(DB_HOST)
+  .connect(envConfig.DB_HOST)
   .then(() => {
     console.log("Database connection successful");
-    app.listen(PORT, () => {
-      console.log(`Server running. Use our API on port: ${PORT}`);
+    app.listen(envConfig.PORT, () => {
+      console.log(`Server running. Use our API on port: ${envConfig.PORT}`);
     });
   })
   .catch((error) => {
