@@ -1,6 +1,6 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
-const app2 = require("./app");
+import app from "./app";
 
 const { DB_HOST, PORT } = require("./configs/env.configs");
 
@@ -10,7 +10,7 @@ mongoose
   .connect(DB_HOST)
   .then(() => {
     console.log("Database connection successful");
-    app2.listen(PORT, () => {
+    app.listen(PORT, () => {
       console.log(`Server running. Use our API on port: ${PORT}`);
     });
   })
